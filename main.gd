@@ -15,6 +15,8 @@ func game_over() -> void:
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
+	$Music.stop()
+	$DeathSound.play()
 	
 func new_game():
 	score = 0
@@ -63,3 +65,5 @@ func _on_start_timer_timeout() -> void:
 
 func _on_hud_start_game() -> void:
 	new_game()
+	$Music.play()
+	
