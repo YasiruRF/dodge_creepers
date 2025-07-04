@@ -66,4 +66,3 @@ func _on_start_timer_timeout() -> void:
 func _on_hud_start_game() -> void:
 	new_game()
 	$Music.play()
-	

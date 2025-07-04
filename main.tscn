@@ -25,6 +25,14 @@ loop = true
 script = ExtResource("1_qk1pq")
 mob_scene = ExtResource("2_so5jb")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(2.40654e-07, 0.354724, 0.355288, 1)
+
 [node name="Player" parent="." instance=ExtResource("1_jikim")]
 
 [node name="MobTimer" type="Timer" parent="."]
@@ -45,14 +53,6 @@ curve = SubResource("Curve2D_6yg2u")
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 
 [node name="HUD" parent="." instance=ExtResource("4_ul5eg")]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(2.40654e-07, 0.354724, 0.355288, 1)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamOggVorbis_d5cfx")
