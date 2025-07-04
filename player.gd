@@ -7,7 +7,7 @@ var velocity: Vector2
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	#hide()
+	hide()
 
 func _process(delta: float) -> void:
 	get_input()
@@ -49,7 +49,14 @@ func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
 	
-func start(pos):
+func start(pos: Vector2) -> void:
 	position = pos
+	rotation = 0
 	show()
 	$CollisionShape2D.disabled = false
+
+	# Reset animation state
+	$AnimatedSprite2D.animation = "walk"
+	$AnimatedSprite2D.flip_h = false
+	$AnimatedSprite2D.flip_v = false
+	$AnimatedSprite2D.stop()
