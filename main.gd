@@ -6,6 +6,7 @@ var score
 func _ready() -> void:
 	$Player.hide()
 	$HUD.start_game.connect(_on_start_game)
+	$Control.hide()
 	
 
 func _process(delta: float) -> void:
@@ -17,6 +18,7 @@ func game_over() -> void:
 	$HUD.show_game_over()
 	$Music.stop()
 	$DeathSound.play()
+	$Control.hide()
 	
 func new_game():
 	score = 0
@@ -25,6 +27,7 @@ func new_game():
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
+
 
 func _on_start_game() -> void:
 	new_game()
@@ -66,3 +69,4 @@ func _on_start_timer_timeout() -> void:
 func _on_hud_start_game() -> void:
 	new_game()
 	$Music.play()
+	$Control.show()
